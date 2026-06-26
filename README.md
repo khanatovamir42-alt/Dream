@@ -35,4 +35,4 @@ Dream is built as a **Modern SPA (Single Page Application)** using:
 ### Local Development
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/dream.git
+   git clone https://github.com/khanatovamir42-alt/dream.git
