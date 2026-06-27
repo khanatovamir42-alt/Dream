@@ -1,0 +1,72 @@
+/* dream/css/responsive.css */
+
+/* Tablet & Small Desktop */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 80px;
+        padding: 20px 10px;
+    }
+    .nav-label, .logo-text, .u-info, .sidebar-header .logo-text {
+        display: none;
+    }
+    .nav-item {
+        justify-content: center;
+        padding: 12px;
+    }
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    .app-shell {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        border-right: none;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        padding: 10px 20px;
+    }
+    .sidebar-header {
+        margin-bottom: 0;
+    }
+    .sidebar-nav {
+        flex-direction: row;
+        margin-left: auto;
+        gap: 5px;
+    }
+    .nav-item {
+        padding: 8px;
+    }
+    .sidebar-footer {
+        display: none; /* Hide profile in mobile sidebar for space */
+    }
+    .main-container {
+        height: calc(100vh - 70px);
+    }
+    .top-bar {
+        padding: 0 15px;
+    }
+    .search-box {
+        width: 150px;
+    }
+    .hero {
+        flex-direction: column;
+        padding-top: 120px;
+        text-align: center;
+    }
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+    .companion-panel {
+        width: 90vw;
+        right: 5vw;
+    }
+}
