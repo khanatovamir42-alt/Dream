@@ -1,0 +1,130 @@
+<!-- dream/onboarding.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Your Dream | Personalize Your Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/onboarding.css">
+</head>
+<body class="bg-animate">
+
+    <div class="onboarding-wrapper">
+        <!-- Progress Indicator -->
+        <div class="onboarding-progress">
+            <div class="progress-track">
+                <div id="progress-fill" class="progress-fill" style="width: 20%;"></div>
+            </div>
+            <div class="step-counter">Step <span id="current-step-num">1</span> of 5</div>
+        </div>
+
+        <div id="onboarding-container" class="onboarding-card glass animate-fade-in">
+            
+            <!-- Step 1: The Goal -->
+            <div class="onboarding-step active" data-step="1">
+                <h2>What is your biggest goal?</h2>
+                <p>What kind of person do you want to become?</p>
+                <div class="input-group">
+                    <input type="text" id="user-goal" placeholder="e.g., Learn Japanese, Master Chess, Start a Business" autofocus>
+                </div>
+                <div class="suggestions">
+                    <button class="suggestion-chip">Learn Guitar</button>
+                    <button class="suggestion-chip">Get Fit</button>
+                    <button class="suggestion-chip">Code an App</button>
+                </div>
+            </div>
+
+            <!-- Step 2: The Why -->
+            <div class="onboarding-step" data-step="2">
+                <h2>Why does this matter?</h2>
+                <p>Your "Why" is the fuel for your journey. Be honest.</p>
+                <div class="input-group">
+                    <textarea id="user-reason" placeholder="I want to connect with my heritage..." rows="4"></textarea>
+                </div>
+            </div>
+
+            <!-- Step 3: Experience -->
+            <div class="onboarding-step" data-step="3">
+                <h2>Current experience level?</h2>
+                <p>We'll tailor the difficulty to your starting point.</p>
+                <div class="option-grid">
+                    <button class="option-card" data-value="beginner">
+                        <span class="option-icon">🌱</span>
+                        <div class="option-text">
+                            <strong>Beginner</strong>
+                            <span>Brand new to this goal</span>
+                        </div>
+                    </button>
+                    <button class="option-card" data-value="intermediate">
+                        <span class="option-icon">🌿</span>
+                        <div class="option-text">
+                            <strong>Intermediate</strong>
+                            <span>I know the basics</span>
+                        </div>
+                    </button>
+                    <button class="option-card" data-value="advanced">
+                        <span class="option-icon">🌳</span>
+                        <div class="option-text">
+                            <strong>Advanced</strong>
+                            <span>I'm looking for mastery</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 4: Style -->
+            <div class="onboarding-step" data-step="4">
+                <h2>Your learning style?</h2>
+                <p>How do you absorb information best?</p>
+                <div class="option-grid">
+                    <button class="option-card" data-value="visual">
+                        <span class="option-icon">🖼️</span>
+                        <strong>Visual</strong>
+                    </button>
+                    <button class="option-card" data-value="practical">
+                        <span class="option-icon">🛠️</span>
+                        <strong>Practical</strong>
+                    </button>
+                    <button class="option-card" data-value="reading">
+                        <span class="option-icon">📖</span>
+                        <strong>Reading</strong>
+                    </button>
+                    <button class="option-card" data-value="mixed">
+                        <span class="option-icon">🧩</span>
+                        <strong>Mixed</strong>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 5: Intervention -->
+            <div class="onboarding-step" data-step="5">
+                <h2>Intervention Mode</h2>
+                <p>How should the Dream Coach help when you're distracted?</p>
+                <div class="option-list">
+                    <button class="mode-card" data-value="gentle">
+                        <strong>Gentle</strong> - A soft nudge.
+                    </button>
+                    <button class="mode-card active" data-value="reflective">
+                        <strong>Reflective</strong> - Asks you "Why?".
+                    </button>
+                    <button class="mode-card" data-value="guardian">
+                        <strong>Guardian</strong> - High accountability.
+                    </button>
+                </div>
+            </div>
+
+            <div class="onboarding-nav">
+                <button id="btn-back" class="btn-secondary hidden">Back</button>
+                <button id="btn-next" class="btn-primary">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/onboarding.js"></script>
+</body>
+</html>
