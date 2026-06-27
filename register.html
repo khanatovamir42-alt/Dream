@@ -1,0 +1,55 @@
+<!-- dream/register.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Dream | Start Your Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="bg-animate auth-page">
+
+    <div class="auth-container">
+        <a href="index.html" class="auth-back">← Back to Home</a>
+        
+        <div class="auth-card glass animate-fade-in">
+            <div class="auth-header">
+                <span class="auth-icon">🌱</span>
+                <h1>Create your account</h1>
+                <p>The first step toward becoming who you want to be.</p>
+            </div>
+
+            <form id="register-form" class="auth-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="name@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">I agree to the <span>Terms of Growth</span></label>
+                </div>
+                <button type="submit" class="btn-primary btn-block">Create Account</button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Already have an account? <a href="login.html">Sign in</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/auth.js"></script>
+</body>
+</html>
