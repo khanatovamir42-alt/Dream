@@ -1,0 +1,162 @@
+<!-- dream/app.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream | My Growth Dashboard</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Unified CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/shell.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/companion.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="app-shell">
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar glass">
+        <div class="sidebar-header">
+            <div class="logo">
+                <span class="logo-icon">🌱</span>
+                <span class="logo-text">Dream</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active" data-view="dashboard">
+                <span class="icon">🏠</span> 
+                <span class="nav-label">Dashboard</span>
+            </a>
+            <a href="#" class="nav-item" data-view="learning-path">
+                <span class="icon">🛤️</span> 
+                <span class="nav-label">Learning Path</span>
+            </a>
+            <a href="#" class="nav-item" data-view="lessons">
+                <span class="icon">📚</span> 
+                <span class="nav-label">Lessons</span>
+            </a>
+            <a href="#" class="nav-item" data-view="progress">
+                <span class="icon">📈</span> 
+                <span class="nav-label">Progress</span>
+            </a>
+            <a href="#" class="nav-item" data-view="achievements">
+                <span class="icon">🏆</span> 
+                <span class="nav-label">Achievements</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-preview-card">
+                <div class="u-avatar" id="shell-avatar">🌱</div>
+                <div class="u-info">
+                    <div class="u-name" id="shell-username">Dreamer</div>
+                    <div class="u-level">Level 1</div>
+                </div>
+            </div>
+            <a href="#" class="nav-item" data-view="settings">
+                <span class="icon">⚙️</span> 
+                <span class="nav-label">Settings</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-container">
+        <header class="top-bar glass">
+            <div class="top-left">
+                <div class="search-box">
+                    <span class="icon">🔍</span>
+                    <input type="text" placeholder="Search your goals...">
+                </div>
+            </div>
+            <div class="top-right">
+                <div class="stat-group">
+                    <div class="stat-pill">
+                        <span class="icon">🔥</span>
+                        <span id="shell-streak">0</span>
+                    </div>
+                    <div class="stat-pill">
+                        <span class="icon">💎</span>
+                        <span id="shell-xp">0</span>
+                    </div>
+                </div>
+                <button class="btn-continue btn-primary" id="global-continue-btn">
+                    Continue Lesson
+                </button>
+                <div class="profile-trigger">
+                    <span class="icon">🔔</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dynamic Content Viewport -->
+        <div id="content-view" class="view-viewport animate-fade-in">
+            <!-- View content (Dashboard, Learning Path, etc.) is injected here via app.js -->
+        </div>
+    </main>
+
+    <!-- Persistent Floating Dream Companion -->
+    <div id="dream-companion" class="companion-wrapper">
+        <button id="companion-trigger" class="companion-trigger glass animate-float">
+            <span class="icon">🤖</span>
+        </button>
+        
+        <div id="companion-panel" class="companion-panel glass hidden">
+            <div class="companion-header">
+                <div class="identity">
+                    <div class="avatar-mini">🤖</div>
+                    <div>
+                        <h3>Dream Coach</h3>
+                        <div class="status">AI Online</div>
+                    </div>
+                </div>
+                <button id="close-companion" class="close-btn">✕</button>
+            </div>
+            <div class="chat-container" id="chat-history">
+                <div class="message system">
+                    Hello! I'm your Dream Coach. I've prepared today's plan based on your goal to <strong><span class="user-goal-text">...</span></strong>. Ready to start?
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <div class="prompt-suggestions">
+                    <button class="chip">What's next?</button>
+                    <button class="chip">Motivate me</button>
+                </div>
+                <div class="input-box">
+                    <textarea id="chat-input" placeholder="Type a message..." rows="1"></textarea>
+                    <button id="send-chat" class="send-btn">➔</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Intervention Nudge Overlay -->
+    <div id="intervention-overlay" class="intervention-overlay hidden">
+        <div class="intervention-modal glass animate-fade-in">
+            <div class="modal-badge">Focus Mode</div>
+            <h2>A Quick Reminder</h2>
+            <p>You're only <span class="highlight">15 minutes</span> away from your daily goal for <span class="user-goal-text highlight">Japanese</span>.</p>
+            <div class="tree-snapshot" id="tree-preview">
+                <!-- Visual of tree growth stage -->
+                🌳
+            </div>
+            <p class="quote">"The best time to plant a tree was 20 years ago. The second best time is now."</p>
+            <div class="modal-actions">
+                <button id="btn-return-growth" class="btn-primary">Continue Growing</button>
+                <button id="btn-ignore-nudge" class="btn-text">I'll do this later</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core App Logic -->
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
